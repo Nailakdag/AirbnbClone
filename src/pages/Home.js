@@ -1,12 +1,18 @@
 import React from "react";
+import Content from "../compenents/Content";
 import FilterNavbar from "../compenents/FilterNavbar/index";
-import HeaderAndInfo from "../compenents/Header/index";
+import Header from "../compenents/Header/index";
+import HomePageFooter from "../compenents/HomePageFooter/index";
+import TopInformationModal from "../compenents/TopInformationModal/index";
 
 const Home = () => {
   return (
     <>
-      <HeaderAndInfo />
+      <TopInformationModal />
+      <Header />
       <FilterNavbar />
+      <Content />
+      <HomePageFooter />
     </>
   );
 };

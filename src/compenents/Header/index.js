@@ -1,14 +1,15 @@
 import React from "react";
-import ModalTextBox from "./ModalTextBox";
-import Header from "./Header";
+import HeaderLarge from "./Headerlarge";
 
-const HeaderAndInfo = () => {
+import SearchToLarge from "./Headersm-large/index";
+
+const Header = () => {
   return (
     <>
-      <ModalTextBox />
-      <Header />
+      <SearchToLarge />
+      <HeaderLarge />
     </>
   );
 };
 
-export default HeaderAndInfo;
+export default Header;

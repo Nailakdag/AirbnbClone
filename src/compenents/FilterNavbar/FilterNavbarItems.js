@@ -1,30 +1,34 @@
 import React from "react";
 import FilterNavbarItem from "./FilterNavbarItem";
 import FilterList from "./FilterList";
-import { Box, Flex } from "@chakra-ui/react";
-import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
+import { Flex } from "@chakra-ui/react";
+// import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
 
 const FilterNavbarItems = () => {
   return (
     <Flex
       overflowX="scroll"
-      paddingY="4"
       sx={{
         "&::-webkit-scrollbar": {
           display: "none",
         },
       }}
+      align="center"
+      flex="1"
+      mr="5"
     >
-      <Box>
+      {/* <Box position="fixed" display={{ base: "none", md: "block" }}>
         <AiOutlineLeft />
-      </Box>
+      </Box> */}
 
       {FilterList.map((data) => {
-        return <FilterNavbarItem img={data.img} title={data.title} />;
+        return (
+          <FilterNavbarItem key={data.id} img={data.img} title={data.title} />
+        );
       })}
-      <Box>
+      {/* <Box display={{ base: "none", md: "block" }}>
         <AiOutlineRight />
-      </Box>
+      </Box> */}
     </Flex>
   );
 };

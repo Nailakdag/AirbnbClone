@@ -6,7 +6,7 @@ import { CgOptions } from "react-icons/cg";
 const FilterButton = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
-    <Box>
+    <Box display={{ base: "none", md: "block" }}>
       <Button
         onClick={onOpen}
         bgColor="transparent"
