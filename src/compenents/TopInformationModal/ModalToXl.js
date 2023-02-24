@@ -10,27 +10,38 @@ import {
   Flex,
   Box,
   ModalBody,
+  useDisclosure,
 } from "@chakra-ui/react";
 
-const ModalToXl = ({ isOpen, onClose }) => {
+const ModalToXl = () => {
+  const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <>
+      <Button
+        display={{ base: "block", xl: "none" }}
+        onClick={onOpen}
+        textDecoration="underline"
+        fontSize="16px"
+        fontWeight="600"
+        color="rgb(34,34,34)"
+        bgColor="transparent"
+        _hover={{
+          bgColor: "transparent",
+        }}
+      >
+        Daha fazla bilgi edinin
+      </Button>
       <Modal isOpen={isOpen} onClose={onClose} size="3xl" isCentered>
-        <ModalOverlay display={{ base: "block", xl: "none" }} />
+        <ModalOverlay />
         <ModalContent
           bgColor="white"
           borderRadius="20px"
-          display={{ base: "flex", xl: "none" }}
           h="90%"
           w="100%"
+          overflow="scroll"
         >
           <ModalBody>
-            <Flex
-              flexDirection="column"
-              w="100%"
-              alignItems="center"
-              overflow="scroll"
-            >
+            <Flex flexDirection="column" w="100%" alignItems="center">
               <Box
                 display="flex"
                 justifyContent="center"

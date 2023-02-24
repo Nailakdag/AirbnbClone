@@ -11,19 +11,34 @@ import {
   Box,
   ModalHeader,
   ModalBody,
+  useDisclosure,
 } from "@chakra-ui/react";
 
-const ModalBoxXl = ({ isOpen, onClose }) => {
+const ModalBoxXl = () => {
+  const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <>
+      <Button
+        display={{ base: "none", xl: "block" }}
+        onClick={onOpen}
+        textDecoration="underline"
+        fontSize="16px"
+        fontWeight="600"
+        color="rgb(34,34,34)"
+        bgColor="transparent"
+        _hover={{
+          bgColor: "transparent",
+        }}
+      >
+        Daha fazla bilgi edinin
+      </Button>
       <Modal isOpen={isOpen} onClose={onClose} isCentered size="6xl">
-        <ModalOverlay display={{ sm: "none", xl: "block" }} />
+        <ModalOverlay />
         <ModalContent
           paddingTop="5"
           paddingLeft="3"
           bgColor="rgb(242,242,242)"
           borderRadius="20px"
-          display={{ sm: "none", xl: "block" }}
         >
           <ModalHeader>
             <ModalCloseButton left="4" mt="2" />

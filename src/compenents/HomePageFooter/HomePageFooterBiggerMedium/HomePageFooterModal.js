@@ -1,4 +1,5 @@
 import {
+  Box,
   Flex,
   Grid,
   GridItem,
@@ -10,7 +11,6 @@ import {
   Text,
 } from "@chakra-ui/react";
 import React from "react";
-import FooterModalLinks from "./FooterModalLinks";
 
 const HomePageFooterModal = ({ isOpen, onClose }) => {
   return (
@@ -20,119 +20,208 @@ const HomePageFooterModal = ({ isOpen, onClose }) => {
         position="fixed"
         minW="100%"
         py="12"
-        textAlign="center"
         bottom="-58px"
         borderRadius="15px"
       >
         <ModalBody>
           <ModalCloseButton p="4" borderRadius="50%" left="5" paddingY="6" />
-          <Grid
-            templateColumns={{ base: "repeat(1,fr)", xl: "repeat(4,1fr)" }}
-            px={{ base: "0px", xl: "50px", "2xl": "150px" }}
-          >
-            <GridItem
-              w="100%"
-              borderBottom={{
-                base: "1px solid #DDD",
-                xl: "0",
-              }}
-              p="3"
+          <Box w="100%" display="flex" justifyContent="center">
+            <Flex
+              flexDirection={{ base: "column", xl: "row" }}
+              w={{ base: "90%", "2xl": "70%" }}
             >
-              <Flex flexDirection="column" alignItems="flex-start" flex="1">
-                <Text as="h3" fontSize="14px" fontWeight="600" mb="15">
+              <Box
+                flex="1"
+                borderBottom={{ base: "1px solid rgb(225,225,225)", xl: "0" }}
+                py="6"
+              >
+                <Text fontSize="14px" fontWeight="600" py="2">
                   Destek
                 </Text>
-                <Flex
-                  flexDirection={{ base: "row", xl: "column" }}
-                  alignItems="flex-start"
-                  flex="1"
+                <Grid
+                  templateColumns={{
+                    base: "repeat(1,1fr)",
+                    md: "repeat(3,1fr)",
+                    xl: "repeat(1,1fr)",
+                  }}
                 >
-                  <FooterModalLinks content="Yardım Merkezi" />
-                  <FooterModalLinks content="AirCover" />
-                  <FooterModalLinks content="Engelli Kişilere Destek" />
-                  <FooterModalLinks content="İptal seçenekleri" />
-                  <FooterModalLinks content="COVİD-19 önlemlerimiz" />
-                  <FooterModalLinks content="Semtinizdeki sorunu bildirin" />
-                </Flex>
-              </Flex>
-            </GridItem>
-
-            <GridItem
-              w="100%"
-              borderBottom={{
-                base: "1px solid #DDD",
-                xl: "0",
-              }}
-              p="3"
-            >
-              <Flex flexDirection="column" alignItems="flex-start" flex="1">
-                <Text as="h3" fontSize="14px" fontWeight="600" mb="15">
+                  <GridItem
+                    w="100%"
+                    fontSize="14px"
+                    py={{ base: "1", xl: "2" }}
+                  >
+                    Yardım Merkezi
+                  </GridItem>
+                  <GridItem
+                    w="100%"
+                    fontSize="14px"
+                    py={{ base: "1", xl: "2" }}
+                  >
+                    AirCover
+                  </GridItem>
+                  <GridItem
+                    w="100%"
+                    fontSize="14px"
+                    py={{ base: "1", xl: "2" }}
+                  >
+                    Engelli kişilere destek
+                  </GridItem>
+                  <GridItem
+                    w="100%"
+                    fontSize="14px"
+                    py={{ base: "1", xl: "2" }}
+                  >
+                    İptal seçenekleri
+                  </GridItem>
+                  <GridItem
+                    w="100%"
+                    fontSize="14px"
+                    py={{ base: "1", xl: "2" }}
+                  >
+                    COVID-19 önlemlerimiz
+                  </GridItem>
+                  <GridItem
+                    w="100%"
+                    fontSize="14px"
+                    py={{ base: "1", xl: "2" }}
+                  >
+                    Semtinizdeki sorunu bildirin
+                  </GridItem>
+                </Grid>
+              </Box>
+              <Box
+                flex="1"
+                borderBottom={{ base: "1px solid rgb(225,225,225)", xl: "0" }}
+                py="6"
+              >
+                <Text fontSize="14px" py="2" fontWeight="600">
                   Topluluk
                 </Text>
-                <Flex
-                  flexDirection={{ base: "row", xl: "column" }}
-                  alignItems="flex-start"
-                  flex="1"
+                <Grid
+                  templateColumns={{
+                    base: "repeat(1,1fr)",
+                    md: "repeat(3,1fr)",
+                    xl: "repeat(1,1fr)",
+                  }}
                 >
-                  <FooterModalLinks content=" Airbnb.org: afet yardımı" />
-                  <FooterModalLinks content="Ayrımcılıkla mücadele" />
-                </Flex>
-              </Flex>
-            </GridItem>
-
-            <GridItem
-              w="100%"
-              borderBottom={{
-                base: "1px solid #DDD",
-                xl: "0",
-              }}
-              p="3"
-            >
-              <Flex flexDirection="column" alignItems="flex-start" flex="1">
-                <Text as="h3" fontSize="14px" fontWeight="600" mb="15">
+                  <GridItem
+                    w="100%"
+                    fontSize="14px"
+                    py={{ base: "1", xl: "2" }}
+                  >
+                    Airbnb.org:afet yardımı
+                  </GridItem>
+                  <GridItem
+                    w="100%"
+                    fontSize="14px"
+                    py={{ base: "1", xl: "2" }}
+                  >
+                    Ayrımcılıkla mücadele
+                  </GridItem>
+                </Grid>
+              </Box>
+              <Box
+                borderBottom={{ base: "1px solid rgb(225,225,225)", xl: "0" }}
+                py="6"
+                flex="1"
+              >
+                <Text fontSize="14px" py="2" fontWeight="600">
                   Ev sahipliği
                 </Text>
-                <Flex
-                  flexDirection={{ base: "row", xl: "column" }}
-                  alignItems="flex-start"
-                  flex="1"
+                <Grid
+                  templateColumns={{
+                    base: "repeat(1,1fr)",
+                    md: "repeat(3,1fr)",
+                    xl: "repeat(1,1fr)",
+                  }}
                 >
-                  <FooterModalLinks content="Evinizi Airbnb'ye taşıyın" />
-                  <FooterModalLinks content="Ev sahipleri için AirCover" />
-                  <FooterModalLinks content="Sorumlu ev sahipliği" />
-                  <FooterModalLinks content="Ev sahibi kaynaklarını keşfedin" />
-                  <FooterModalLinks content="Topluluk forumunu ziyaret edin" />
-                  <FooterModalLinks content="Sorumlu ev sahipliği" />
-                </Flex>
-              </Flex>
-            </GridItem>
-
-            <GridItem
-              w="100%"
-              borderBottom={{
-                base: "1px solid #DDD",
-                xl: "0",
-              }}
-              p="3"
-            >
-              <Flex flexDirection="column" alignItems="flex-start" flex="1">
-                <Text as="h3" fontSize="14px" fontWeight="600" mb="15px">
+                  <GridItem
+                    w="100%"
+                    fontSize="14px"
+                    py={{ base: "1", xl: "2" }}
+                  >
+                    Evinizi Airbnb'ye taşıyın
+                  </GridItem>
+                  <GridItem
+                    w="100%"
+                    fontSize="14px"
+                    py={{ base: "1", xl: "2" }}
+                  >
+                    Ev sahipleri için AirCover
+                  </GridItem>
+                  <GridItem
+                    w="100%"
+                    fontSize="14px"
+                    py={{ base: "1", xl: "2" }}
+                  >
+                    Ev sahibi kaynaklarını keşfedin
+                  </GridItem>
+                  <GridItem
+                    w="100%"
+                    fontSize="14px"
+                    py={{ base: "1", xl: "2" }}
+                  >
+                    Topluluk forumunu ziyaret edin
+                  </GridItem>
+                  <GridItem
+                    w="100%"
+                    fontSize="14px"
+                    py={{ base: "1", xl: "2" }}
+                  >
+                    Sorumlu ev sahipliği
+                  </GridItem>
+                </Grid>
+              </Box>
+              <Box flex="1" py="6">
+                <Text fontSize="14px" py="2" fontWeight="600">
                   Airbnb
                 </Text>
-                <Flex
-                  flexDirection={{ base: "row", xl: "column" }}
-                  alignItems="flex-start"
-                  flex="1"
+                <Grid
+                  templateColumns={{
+                    base: "repeat(1,1fr)",
+                    md: "repeat(3,1fr)",
+                    xl: "repeat(1,1fr)",
+                  }}
                 >
-                  <FooterModalLinks content="Basın odası" />
-                  <FooterModalLinks content="Yeni özellikler hakkında bilgi" />
-                  <FooterModalLinks content="Kurucularımızdan bir mektup" />
-                  <FooterModalLinks content="Kariyer" />
-                  <FooterModalLinks content="Yatırımcılar" />
-                </Flex>
-              </Flex>
-            </GridItem>
-          </Grid>
+                  <GridItem
+                    w="100%"
+                    fontSize="14px"
+                    py={{ base: "1", xl: "2" }}
+                  >
+                    Basın odası
+                  </GridItem>
+                  <GridItem
+                    w="100%"
+                    fontSize="14px"
+                    py={{ base: "1", xl: "2" }}
+                  >
+                    Yeni özellikler hakkında bilgi
+                  </GridItem>
+                  <GridItem
+                    w="100%"
+                    fontSize="14px"
+                    py={{ base: "1", xl: "2" }}
+                  >
+                    Kurucularımızdan bir mektup
+                  </GridItem>
+                  <GridItem
+                    w="100%"
+                    fontSize="14px"
+                    py={{ base: "1", xl: "2" }}
+                  >
+                    Kariyer
+                  </GridItem>
+                  <GridItem
+                    w="100%"
+                    fontSize="14px"
+                    py={{ base: "1", xl: "2" }}
+                  >
+                    Yatırımcılar
+                  </GridItem>
+                </Grid>
+              </Box>
+            </Flex>
+          </Box>
         </ModalBody>
       </ModalContent>
     </Modal>
